@@ -10,7 +10,7 @@ namespace moduloseguimiento.API.Services
     public class GetSPARHDataService : IGetSPARHData
     {
 
-        private const string _data = "https://esi.uv.mx/ApiInfoDTE/api/SPARH/GetSPARHData";
+        private const string _data = "ServicePublico";
 
         private readonly IEncrypt _encrypt;
 

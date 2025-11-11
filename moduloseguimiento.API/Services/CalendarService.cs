@@ -19,8 +19,8 @@ namespace moduloseguimiento.API.Services
 
         //SERVICIOS PARA OBTENER LOS CALENDARIOS DE LA UV.
         // URL base con placeholders para reemplazar
-        private const string _calendarios = "https://apps.uv.mx/api/conoce/v01/public/calendars?page=0&size=10&sort=id,asc";
-        private const string _diasCalendario = "https://apps.uv.mx/api/conoce/v01/public/calendars/{0}/periods/{1}/days?page=0&size=1000&sort=id,asc";
+        private const string _calendarios = "WebService";
+        private const string _diasCalendario = "WebService";
 
         public async Task<string> Calendarios()
         {

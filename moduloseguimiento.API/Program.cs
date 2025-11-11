@@ -19,10 +19,6 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
     policy =>
     {
-        // PROD
-        //policy.WithOrigins("http://localhost:4200")
-        // QA
-        //policy.WithOrigins("https://academicos.uv.mx/ApiEvalPosgrado")
         policy.WithOrigins(
             "http://localhost:4200"         
             )

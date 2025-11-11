@@ -12,8 +12,8 @@ namespace moduloseguimiento.API.Services
     public class ActiveDirectoryService : IActiveDirectory
     {
 
-        private const string _validarUsuarioAD = "http://148.226.12.106/ad/api/front/IsValidUserAD";
-        private const string _obtenerInfoUsuarioAD = "http://148.226.12.106/ad/api/front/GetUserDataAD";
+        private const string _validarUsuarioAD = "WebService";
+        private const string _obtenerInfoUsuarioAD = "WebService";
 
 
         public async Task<bool> ValidarUsuarioAD(string userId, string pwd)
@@ -39,39 +39,7 @@ namespace moduloseguimiento.API.Services
             }
         }
 
-        /*public async Task<ActiveDirectoryUser?> GetInfoUsuarioAD(string userId)
-        {
-            try
-            {
-                using var httpClient = new HttpClient();
 
-                // Se construye el body de la peticion
-                var data = new {UserId  = userId};
-                var json = JsonSerializer.Serialize(data);
-                var body = new StringContent(json, Encoding.UTF8, "application/json");
-
-                // Se hace el POST
-                var response = await httpClient.PostAsync(_obtenerInfoUsuarioAD, body);
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    throw new Exception($"Error al llamar AD: {response.StatusCode}");
-                }
-
-                //Se deserializa la respuesta
-                var responseContent = await response.Content.ReadAsStringAsync();
-                var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-
-                var userData = JsonSerializer.Deserialize<ActiveDirectoryUser>(responseContent, jsonOptions);
-
-                return userData;
-
-            }
-            catch(Exception ex)
-            {
-                throw new Exception("Error al obtener los datos del usuario desde AD", ex);
-            }
-        }*/
 
         public async Task<Respuesta> GetInfoUsuarioAD(string userId)
         {
